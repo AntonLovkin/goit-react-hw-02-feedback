@@ -21,9 +21,10 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
   </div>
 );
 
-// Statistics.defaultProps = {
-//     name: "User Name",
-// };
+Statistics.defaultProps = {
+  positivePercentage: 0,
+  total: 0,
+};
 
 // Statistics.propTypes = {
 //     name: PropTypes.string,

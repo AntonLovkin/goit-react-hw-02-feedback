@@ -1,13 +1,6 @@
 import { Component } from "react";
 import Statistics from "./components/Statistics";
-// import ReactDOM from "react-dom";
-// import Counter from "./components/Feedback";
-
-// const App = () => (
-//   <div>
-//     <Counter />
-//   </div>
-// );
+import FeedbackOptions from "./components/FeedbackOptions";
 
 class App extends Component {
   state = {
@@ -48,7 +41,7 @@ class App extends Component {
   countPositiveFeedbackPercentage = () => {
     this.setState((prevState) => {
       return {
-        positive: Math.round(
+        positivePercentage: Math.round(
           (prevState.good /
             (prevState.neutral + prevState.bad + prevState.good)) *
             100
@@ -63,7 +56,12 @@ class App extends Component {
     return (
       <div onClick={this.countPositiveFeedbackPercentage}>
         <div onClick={this.countTotalFeedback}>
+          {/* <Section title="No feedback info"></Section> */}
+
           <h2>Please leave feedback</h2>
+
+          {/* <FeedbackOptions options={ } onLeaveFeedback={ }/> */}
+
           <button type="button" onClick={this.handleIncrementGood}>
             Good
           </button>
@@ -73,7 +71,6 @@ class App extends Component {
           <button type="button" onClick={this.handleIncrementBad}>
             Bad
           </button>
-
           <Statistics
             good={this.state.good}
             neutral={this.state.neutral}
@@ -88,3 +85,12 @@ class App extends Component {
 }
 
 export default App;
+
+// import ReactDOM from "react-dom";
+// import Counter from "./components/Feedback";
+
+// const App = () => (
+//   <div>
+//     <Counter />
+//   </div>
+// );
