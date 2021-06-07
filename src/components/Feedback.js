@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 
 class Counter extends Component {
   state = {
@@ -38,10 +38,11 @@ class Counter extends Component {
   countPositiveFeedbackPercentage = () => {
     this.setState((prevState) => {
       return {
-        positive:
+        positive: Math.round(
           (prevState.good /
             (prevState.neutral + prevState.bad + prevState.good)) *
-          100,
+            100
+        ),
       };
     });
   };
