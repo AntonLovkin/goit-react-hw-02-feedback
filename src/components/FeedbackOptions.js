@@ -1,17 +1,25 @@
-import { Component } from "react";
+const FeedbackOptions = ({ options, onLeaveFeedback }) => (
+  <ul>
+    {Object.keys(options).map((key) => (
+      <li key={key}>
+        <button type="button" onClick={() => onLeaveFeedback(key)}>
+          {key}
+        </button>
+      </li>
+    ))}
+  </ul>
 
-const FeedbackOptions = () => (
-  <div>
-    <button type="button" onClick={this.handleIncrementGood}>
-      Good
-    </button>
-    <button type="button" onClick={this.handleIncrementNeutral}>
-      Neutral
-    </button>
-    <button type="button" onClick={this.handleIncrementBad}>
-      Bad
-    </button>
-  </div>
+  // <div>
+  //   <button type="button" onClick={this.onLeaveFeedback}>
+  //     Good
+  //   </button>
+  //   <button type="button" onClick={this.onLeaveFeedback}>
+  //     Neutral
+  //   </button>
+  //   <button type="button" onClick={this.onLeaveFeedback}>
+  //     Bad
+  //   </button>
+  // </div>
 );
 
 // FeedbackOptions.defaultProps = {
